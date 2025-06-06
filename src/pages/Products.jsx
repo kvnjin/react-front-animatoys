@@ -9,8 +9,10 @@ import osNylon from '../assets/os-nylon.png'
 import pelucheRenard from '../assets/peluche-renard.jpg'
 import { useNavigate } from 'react-router-dom'
 import CircularText from '../components/CircularText';
+import { useCart } from '../components/CartContext'
 
 function Products() {
+
   const [sortOpen, setSortOpen] = useState(false)
   const [sortOption, setSortOption] = useState('none')
   const [products, setProducts] = useState([])
@@ -18,7 +20,8 @@ function Products() {
   const [error, setError] = useState(null)
   const navigate = useNavigate()
   const cleanUrl = (url) => (url ? url.replace(/\\/g, '/') : '')
-
+  const { addToCart } = useCart()
+  
   useEffect(() => {
     fetchAnimatoysProducts()
       .then(setProducts)
@@ -101,9 +104,10 @@ function Products() {
       <div className="product-grid">
         
         {sortedProducts.map((variant) => (
-          <div className="product-card" key={variant.id} 
+          <div className="product-card" key={variant.id}
             onClick={() => navigate(`/produits/${variant.product.id}`)}
-            style={{ cursor: 'pointer' }}>
+            style={{ cursor: 'pointer' }} 
+            >
               <img
                 src={cleanUrl(variant.product.featuredAsset?.preview)}
                 alt={variant.product.name}
@@ -116,6 +120,24 @@ function Products() {
                 {variant.stockLevel === "0" && (
                   <span className="badge-out">Rupture</span>
                 )}
+                <button
+                  className="add-to-cart-btn"
+                  disabled={Number(variant.stockLevel) === 0}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    addToCart(
+                      {
+                        id: variant.id,
+                        name: variant.product.name,
+                        price: variant.priceWithTax,
+                        preview: variant.product.featuredAsset?.preview,
+                      },
+                      1
+                    );
+                  }}
+                >
+                  Ajouter au panier
+                </button>
               </div>
           </div>
         ))}
