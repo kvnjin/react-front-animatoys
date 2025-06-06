@@ -1,0 +1,43 @@
+.btn-group {
+  display: flex;
+  align-items: center;
+  border: 2px solid #F9A38A;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: white;
+  width: fit-content;
+}
+
+.decrement-btn,
+.increment-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #F9A38A;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.decrement-btn:hover,
+.increment-btn:hover {
+  background-color: #FCF6F6;
+}
+
+.decrement-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.increment-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-group span {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 20px;
+  min-width: 40px;
+  text-align: center;
+}

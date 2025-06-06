@@ -1,0 +1,126 @@
+.products-page {
+  padding: 50px 100px 60px;
+  background-color: white;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: 'Aleo', serif;
+  font-size: 18px;
+}
+
+.filter {
+  cursor: pointer;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background-color: #FCF6F6;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Aleo', serif;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-title {
+justify-content: start;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.product-price {
+    justify-content: start;
+  color: #555;
+  font-size: 14px;
+}
+
+.custom-sort {
+  position: relative;
+  cursor: pointer;
+  font-family: 'Aleo', serif;
+  font-size: 16px;
+}
+
+.sort-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  width: 300px;
+}
+
+.sort-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.sort-option input[type="radio"] {
+  accent-color: #F19784;
+}
+
+.products-images-section {
+    padding: 60px 20px;
+}
+
+.products-images {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.products-images img {
+  width: 150px;
+  height: 300px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  object-fit: cover;  
+}
+
+.products-images img:hover {
+  transform: translateY(-5px);
+}
+
+.loader-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.badge-out {
+    color: red;
+}

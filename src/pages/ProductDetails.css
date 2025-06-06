@@ -1,0 +1,85 @@
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  border: 2px solid #F9A38A;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: hsl(14, 90%, 76%);
+  width: fit-content;
+  font-size: 20px;
+  color: white;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: 'Aleo', serif;
+}
+
+.add-to-cart-btn:hover {
+  background-color:#fbb19b;
+  transition: transform 0.3s ease;
+}
+
+.add-to-cart-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.product-details-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background-color: #fdfdfd;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.product-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-info h1 {
+  font-size: 36px;
+  font-family: 'Aleo', serif;
+  margin: 0;
+}
+
+.product-info .description {
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Aleo', serif;
+  color: #444;
+}
+
+.product-info .delivery-info {
+  font-size: 16px;
+  font-family: 'Aleo', serif;
+}
+
+.product-info p {
+  font-size: 18px;
+  font-family: 'Aleo', serif;
+}
+
+.badge-out {
+  color: red;
+  font-family: 'Aleo', serif;
+}
