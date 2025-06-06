@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { fetchProductById } from '../service/ProductServices'
 import Counter from '../components/Counter'
 import './ProductDetails.css'
+import { useCart } from '../components/CartContext'
+
 
 function ProductDetails() {
   const { id } = useParams()
@@ -13,6 +15,8 @@ function ProductDetails() {
 
   const cleanUrl = (url) => (url ? url.replace(/\\/g, '/') : '')
   const cleanP = (p) => (p ? p.replace(/<[^>]*>/g, '') : '')
+
+  const { addToCart } = useCart()
 
   useEffect(() => {
     fetchProductById(id)
@@ -49,7 +53,21 @@ function ProductDetails() {
           setCount={setCount}
           stockLevel={Number(variant.stockLevel)}
         />
-        <button className="add-to-cart-btn" disabled={Number(variant.stockLevel) === 0}>
+        <button
+          className="add-to-cart-btn"
+          disabled={Number(variant.stockLevel) === 0}
+          onClick={() =>
+            addToCart(
+              {
+                id: variant.id,
+                name: product.name,
+                price: variant.priceWithTax,
+                preview: product.featuredAsset?.preview,
+              },
+              count
+            )
+          }
+        >
           Ajouter au panier - {cartPrice} €
         </button>
       </div>
