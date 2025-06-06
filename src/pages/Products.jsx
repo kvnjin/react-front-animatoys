@@ -131,6 +131,7 @@ function Products() {
                         name: variant.product.name,
                         price: variant.priceWithTax,
                         preview: variant.product.featuredAsset?.preview,
+                        stockLevel: Number(variant.stockLevel),
                       },
                       1
                     );

@@ -19,7 +19,7 @@ function Header() {
           <Link to="/" className="nav-link">Accueil</Link>
           <Link to="/produits" className="nav-link">Produit</Link>
            <Link to="/cart" className="nav-link cart-link">
-            <FiShoppingCart className="cart-icon" />
+            <FiShoppingCart className="cart-icon"/>
             {totalItems > 0 && (
               <span className="cart-badge">{totalItems}</span>
             )}

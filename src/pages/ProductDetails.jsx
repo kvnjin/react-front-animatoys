@@ -63,6 +63,7 @@ function ProductDetails() {
                 name: product.name,
                 price: variant.priceWithTax,
                 preview: product.featuredAsset?.preview,
+                stockLevel: Number(variant.stockLevel),
               },
               count
             )
